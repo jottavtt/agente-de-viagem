@@ -1,0 +1,9 @@
+
+:root { color-scheme: light dark; }
+body { margin: 0; padding: 24px; }
+.container { max-width: 900px; margin: 0 auto; display: grid; gap: 16px; }
+.card { padding: 16px; border: 1px solid #444; border-radius: 12px; }
+label { display:block; margin: 8px 0 4px; }
+input, select, textarea { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #666; background: transparent; }
+button { padding: 10px 16px; border-radius: 10px; border: 1px solid #666; cursor:pointer; }
+pre { white-space: pre-wrap; }

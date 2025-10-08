@@ -1,0 +1,26 @@
+
+# Render blueprint para backend + web
+services:
+  - type: web
+    name: consultor-viagens-api
+    env: docker
+    rootDir: backend
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+  - type: web
+    name: consultor-viagens-web
+    env: node
+    rootDir: web
+    plan: free
+    autoDeploy: true
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        # Substitua pela URL do backend em produção (p.ex.: https://consultor-viagens-api.onrender.com)
+        value: "http://localhost:8000"
